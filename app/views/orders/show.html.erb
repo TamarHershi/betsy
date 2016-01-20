@@ -9,7 +9,11 @@
     </h2>
     <strong>Name: <%= @order.cc_name %></strong><br>
     <strong>Email:</strong> <%= @order.email_address %><br>
-    <strong>Mailing Address: </strong><%= @order.mailing_address %><br>
+    <strong>Mailing Address: </strong><%= @order.street_address %><br>
+                                       <%= @order.street_address %><br>
+                                       <%= @order.city %><br>
+                                       <%= @order.state %><br>
+                                       <%= @order.zip %><br>
     <strong>Zip: </strong><%= @order.zip %><br>
     <strong>Last Four Digits of CC:</strong> <%= @order.last_four %><br>
     <strong>Status: </strong> <%= @order.status.capitalize %><br>

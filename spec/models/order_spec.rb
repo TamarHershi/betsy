@@ -6,7 +6,7 @@ RSpec.describe Order, type: :model do
     status: "pending",
     cc_name: "John Carlisle",
     email_address: "jcarl@gmail.com",
-    mailing_address: "653 Gorge Way",
+    street_address: "653 Gorge Way",
     cc_number: 5110538084994719,
     cc_exp: "06/18",
     cc_cvv: "674",
@@ -40,7 +40,7 @@ RSpec.describe Order, type: :model do
         status: nil,
         cc_name: "John Carlisle",
         email_address: "jcarl@gmail.com",
-        mailing_address: "653 Gorge Way",
+        street_address: "653 Gorge Way",
         cc_number: 5110538084994719,
         cc_exp: "06/18",
         cc_cvv: "674",
@@ -52,7 +52,7 @@ RSpec.describe Order, type: :model do
   #       status: "pending",
   #       cc_name: nil,
   #       email_address: "jcarl@gmail.com",
-  #       mailing_address: "653 Gorge Way",
+  #       street_address: "653 Gorge Way",
   #       cc_number: 5110538084994719,
   #       cc_exp: "06/18",
   #       cc_cvv: "674",
@@ -65,7 +65,7 @@ RSpec.describe Order, type: :model do
   #       status: "pending",
   #       cc_name: "John",
   #       email_address: nil,
-  #       mailing_address: "653 Gorge Way",
+  #       street_address: "653 Gorge Way",
   #       cc_number: 5110538084994719,
   #       cc_exp: "06/18",
   #       cc_cvv: "674",
@@ -78,7 +78,7 @@ RSpec.describe Order, type: :model do
   #       status: "pending",
   #       cc_name: "John",
   #       email_address: "jcarl@gmail.com",
-  #       mailing_address: nil,
+  #       street_address: nil,
   #       cc_number: 5110538084994719,
   #       cc_exp: "06/18",
   #       cc_cvv: "674",
@@ -91,7 +91,7 @@ RSpec.describe Order, type: :model do
   #       status: "pending",
   #       cc_name: "John",
   #       email_address: "jcarl@gmail.com",
-  #       mailing_address: "123 Fake Street",
+  #       street_address: "123 Fake Street",
   #       cc_number: nil,
   #       cc_exp: "06/18",
   #       cc_cvv: "674",
@@ -104,7 +104,7 @@ RSpec.describe Order, type: :model do
   #       status: "pending",
   #       cc_name: "John",
   #       email_address: "jcarl@gmail.com",
-  #       mailing_address: "123 Fake Street",
+  #       street_address: "123 Fake Street",
   #       cc_number: 5110538084994719,
   #       cc_exp: nil,
   #       cc_cvv: "674",
@@ -117,7 +117,7 @@ RSpec.describe Order, type: :model do
   #       status: "pending",
   #       cc_name: "John",
   #       email_address: "jcarl@gmail.com",
-  #       mailing_address: "123 Fake Street",
+  #       street_address: "123 Fake Street",
   #       cc_number: 5110538084994719,
   #       cc_exp: "06/18",
   #       cc_cvv: nil,
@@ -130,7 +130,7 @@ RSpec.describe Order, type: :model do
     #     status: "pending",
     #     cc_name: "John",
     #     email_address: "jcarl@gmail.com",
-    #     mailing_address: "123 Fake Street",
+    #     street_address: "123 Fake Street",
     #     cc_number: 5110538084994719,
     #     cc_exp: "06/18",
     #     cc_cvv: "123",
@@ -182,19 +182,19 @@ RSpec.describe Order, type: :model do
 
   describe "self.pending" do
     it "" do
-      
+
     end
   end
 
   describe "decrement_products_stock" do
     it "" do
-      
+
     end
   end
 
   describe "total" do
     it "" do
-      
+
     end
   end
 

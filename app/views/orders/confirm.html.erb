@@ -1,6 +1,6 @@
 <div class="row">
-  <h1 class="header-box"> 
-    Order #<%= @order.id %> Confirmation 
+  <h1 class="header-box">
+    Order #<%= @order.id %> Confirmation
   </h1>
 </div>
 
@@ -9,7 +9,10 @@
   <div class="col-sm-12">
     Name: <strong><%= @order.cc_name %></strong><br>
     E-mail: <%= @order.email_address %><br>
-    Mailing Address: <%= @order.mailing_address %><br>
+    Address: <%= @order.street_address %><br>
+             <%= @order.city %><br>
+             <%= @order.state %><br>
+             <%= @order.zip %><br> 
     Order Placed: <%= @order.placed_at.strftime("%B %d, %Y") %><br>
     Order Status: <%= @order.status.capitalize %><br>
     <%=  %><br>
