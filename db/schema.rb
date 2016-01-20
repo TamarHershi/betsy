@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151218003607) do
+ActiveRecord::Schema.define(version: 20160120223230) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -39,11 +39,10 @@ ActiveRecord::Schema.define(version: 20151218003607) do
     t.string   "status"
     t.string   "cc_name"
     t.string   "email_address"
-    t.string   "mailing_address"
     t.string   "cc_number"
     t.integer  "zip"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.datetime "placed_at"
     t.string   "cc_exp"
     t.string   "cc_cvv"
