@@ -80,7 +80,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.permit(order:[:status, :cc_name, :email_address, :mailing_address, :cc_number, :cc_exp, :cc_cvv, :zip, :placed_at])
+    params.permit(order:[:status, :cc_name, :email_address, :street_address, :city, :state, :cc_number, :cc_exp, :cc_cvv, :zip, :placed_at])
   end
 
   #views will need to make sure they send in an id to use here

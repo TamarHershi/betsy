@@ -12,11 +12,13 @@ class Order < ActiveRecord::Base
   validates :status, inclusion: { in: %w(cancelled) }, on: :cancel
   validates :cc_name, presence: true, on: :pay
   validates :email_address, presence: true, on: :pay
-  validates :mailing_address, presence: true, on: :pay
+  validates :street_address, presence: true, on: :pay
   validates :cc_number, presence: true, on: :pay
   validates :zip, presence: true, on: :pay
   validates :cc_exp, presence: true, on: :pay
   validates :cc_cvv, presence: true, on: :pay
+  validates :city, presence: true, on: :pay
+  validates :state, presence: true, on: :pay
 
   def self.pending(first_product)
     Order.transaction do
