@@ -54,13 +54,23 @@ class OrdersController < ApplicationController
   end
 
   def pay
+# talk to the shipping app and ask for shipping info
     @order = Order.find(session[:order_id])
     @order.update(order_params[:order])
     @order.placed_at = Time.now
     @order.status =  "paid"
     @order.save!
+
+    order_hash = {
+      :city =>    params[:order][:city],
+      :state =>   params[:order][:state],
+      :zip =>     params[:order][:zip]
+    }
+    order_hash = order_hash.to_query
+    result = HTTParty.post('http://localhost:3001/packages', order_hash)
     redirect_to order_confirm_path(@order.id)
   end
+
 
 
   #edit and update... are for the guest to do on the cart page?
@@ -76,6 +86,7 @@ class OrdersController < ApplicationController
     order.update_attributes(order_params[:order])
     redirect_to order_path(params[:id])
   end
+
 
   private
 
