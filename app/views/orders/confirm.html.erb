@@ -26,41 +26,48 @@
             <thead>
               <h3>UPS</h3>
                <tr>
+                  <th>Choose this <br>method</th>
                   <th>Shipping method</th>
                   <th>Cost</th>
                   <th>Estimate Date Delivery</th>
                </tr>
-               <% @ups_results.each do |result| %>
-               <tr>
-                 <td> <%= result[0] %> </td>
-                 <td> <%= nice_price(result[1].to_i) %> </td>
-                 <% if !result[2].nil? %>
-                  <td> <%= result[2].to_date.strftime("%m/%d/%Y") %> </td>
-                <% else %>
-                  <td> No Estimate Date</td>
-                <% end %>
-               </tr>
-               <% end %>
-            <thead>
-         </table>
-      </div>
-   </div>
-   <div class="col-xs-6">
-      <div class="table-responsive">
-         <table class="table table-bordered">
-            <thead>
-              <h3>USPS</h3>
-               <tr>
-                  <th>Shipping method</th>
-                  <th>Cost</th>
-                  <th>Estimate Date Delivery</th>
-               </tr>
-               <% @usps_results.each do |result| %>
-               <tr>
-                 <td> <%= result[0] %> </td>
-                 <td> $<%= result[1].to_f/10 %> </td>
-                 <td> No Estimate Date </td>
-               </tr>
+               <%= form_tag do %>
+                 <% @ups_results.each do |result| %>
+                 <tr>
+                   <td> <%= radio_button_tag(:result[1], true) %> </td>
+                   <td> <%= result[0] %> </td>
+                   <td> <%= nice_price(result[1].to_i) %> </td>
+                   <% if !result[2].nil? %>
+                    <td> <%= result[2].to_date.strftime("%m/%d/%Y") %> </td>
+                  <% else %>
+                    <td> No Estimate Date</td>
+                  <% end %>
+                 </tr>
+                 <% end %>
+              <thead>
+           </table>
+        </div>
+     </div>
+     <div class="col-xs-6">
+        <div class="table-responsive">
+           <table class="table table-bordered">
+              <thead>
+                <h3>USPS</h3>
+                 <tr>
+                   <th>Choose this <br>method</th>
+                    <th>Shipping method</th>
+                    <th>Cost</th>
+                    <th>Estimate Date Delivery</th>
+                 </tr>
+                 <% @usps_results.each do |result| %>
+                 <tr>
+                   <td> <%= radio_button_tag(:result[1], true) %> </td>
+                   <td> <%= result[0] %> </td>
+                   <td> $<%= result[1].to_f/10 %> </td>
+                   <td> No Estimate Date </td>
+                 </tr>
+                 <% end %>
+               <!-- below ends form tag -->
                <% end %>
          </table>
       </div>
