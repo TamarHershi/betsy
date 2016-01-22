@@ -1,4 +1,4 @@
-cdrequire 'httparty'
+require 'httparty'
 class OrdersController < ApplicationController
   #look up callbacks
   #also, in order to make filter work, buttons to do stuff to orders need to send an id into params. (see guest_authorize method, which uses id)
@@ -37,7 +37,7 @@ class OrdersController < ApplicationController
     @order = Order.find(session[:order_id])
 
     order_hash = {
-      :city =>    @order.city
+      :city =>    @order.city,
       :state =>   @order.state,
       :zip =>     @order.zip,
       :country => "US"
@@ -46,7 +46,6 @@ class OrdersController < ApplicationController
     @result = HTTParty.get("http://localhost:3000/rates?#{order_hash}", headers: {'Accept' => 'application/json'}, format: :json).parsed_response
     ups_results = @result[:ups]
     usps_results = @result[:usps]
-    
 
   end
 
