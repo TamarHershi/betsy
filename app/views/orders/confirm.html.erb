@@ -24,15 +24,21 @@
       <div class="table-responsive">
          <table class="table table-bordered">
             <thead>
-              UPS
+              <h3>UPS</h3>
                <tr>
                   <th>Shipping method</th>
                   <th>Cost</th>
+                  <th>Estimate Date Delivery</th>
                </tr>
                <% @ups_results.each do |result| %>
                <tr>
                  <td> <%= result[0] %> </td>
-                 <td> <%= result[1] %> </td>
+                 <td> <%= nice_price(result[1].to_i) %> </td>
+                 <% if !result[2].nil? %>
+                  <td> <%= result[2].to_date.strftime("%m/%d/%Y") %> </td>
+                <% else %>
+                  <td> No Estimate Date</td>
+                <% end %>
                </tr>
                <% end %>
             <thead>
@@ -43,15 +49,17 @@
       <div class="table-responsive">
          <table class="table table-bordered">
             <thead>
-              USPS
+              <h3>USPS</h3>
                <tr>
                   <th>Shipping method</th>
                   <th>Cost</th>
+                  <th>Estimate Date Delivery</th>
                </tr>
                <% @usps_results.each do |result| %>
                <tr>
                  <td> <%= result[0] %> </td>
-                 <td> <%= result[1] %> </td>
+                 <td> $<%= result[1].to_f/10 %> </td>
+                 <td> No Estimate Date </td>
                </tr>
                <% end %>
          </table>
