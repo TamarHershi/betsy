@@ -42,10 +42,10 @@ class OrdersController < ApplicationController
       :zip =>     @order.zip,
       :country => "US"
     }
-    order_hash = order_hash.to_query
-    @result = HTTParty.get("http://localhost:3000/rates?#{order_hash}", headers: {'Accept' => 'application/json'}, format: :json).parsed_response
-    ups_results = @result[:ups]
-    usps_results = @result[:usps]
+    # order_hash = order_hash.to_query
+    # @result = HTTParty.get("http://localhost:3000/rates?#{order_hash}", headers: {'Accept' => 'application/json'}, format: :json).parsed_response
+    # ups_results = @result[:ups]
+    # usps_results = @result[:usps]
 
   end
 

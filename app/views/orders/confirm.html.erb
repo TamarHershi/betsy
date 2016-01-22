@@ -12,12 +12,62 @@
     Address: <%= @order.street_address %><br>
              <%= @order.city %><br>
              <%= @order.state %><br>
-             <%= @order.zip %><br> 
+             <%= @order.zip %><br>
     Order Placed: <%= @order.placed_at.strftime("%B %d, %Y") %><br>
     Order Status: <%= @order.status.capitalize %><br>
     <%=  %><br>
   </div>
 </div>
+
+<div class="row-fluid">
+   <div class="col-xs-6">
+      <div class="table-responsive">
+         <table class="table table-bordered">
+            <thead>
+              UPS
+               <tr>
+                  <th>One</th>
+                  <th>One</th>
+               </tr>
+            <thead>
+            <tbody>
+               <tr>
+                  <td>Two</td>
+                  <td>Two</td>
+            </tbody>
+         </table>
+      </div>
+   </div>
+   <div class="col-xs-6">
+      <div class="table-responsive">
+         <table class="table table-bordered">
+            <thead>
+              USPS
+               <tr>
+                  <th>One</th>
+                  <th>One</th>
+                  <th>One</th>
+               </tr>
+            <thead>
+            <tbody>
+               <tr>
+                  <td>Two</td>
+                  <td>Two</td>
+                  <td>Two</td>
+         </table>
+      </div>
+   </div>
+</div>
+
+<!-- <div class="row">
+  <div class="table-master">
+    <table ckass='table table-hover'>
+      <tr>
+        <th> UPS </th>
+        <th> USPS </th>
+      </tr>
+  </div>
+</div> -->
 
 <div class="row">
   <div class="table-master">
