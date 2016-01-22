@@ -26,15 +26,16 @@
             <thead>
               UPS
                <tr>
-                  <th>One</th>
-                  <th>One</th>
+                  <th>Shipping method</th>
+                  <th>Cost</th>
                </tr>
-            <thead>
-            <tbody>
+               <% @ups_results.each do |result| %>
                <tr>
-                  <td>Two</td>
-                  <td>Two</td>
-            </tbody>
+                 <td> <%= result[0] %> </td>
+                 <td> <%= result[1] %> </td>
+               </tr>
+               <% end %>
+            <thead>
          </table>
       </div>
    </div>
@@ -44,16 +45,15 @@
             <thead>
               USPS
                <tr>
-                  <th>One</th>
-                  <th>One</th>
-                  <th>One</th>
+                  <th>Shipping method</th>
+                  <th>Cost</th>
                </tr>
-            <thead>
-            <tbody>
+               <% @usps_results.each do |result| %>
                <tr>
-                  <td>Two</td>
-                  <td>Two</td>
-                  <td>Two</td>
+                 <td> <%= result[0] %> </td>
+                 <td> <%= result[1] %> </td>
+               </tr>
+               <% end %>
          </table>
       </div>
    </div>
